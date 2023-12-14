@@ -4,10 +4,10 @@ This is a tiny demo to show off **Nuxt's route rules integration with Vercel**.
 
 Here are a few different pages to try:
 
-- [/](https://nuxt-vercel-isr.vercel.app/) - revalidated every 60 seconds, in the background
-- [/static](https://nuxt-vercel-isr.vercel.app/static) - generated on demand and then cached permanently
-- [/prerendered](https://nuxt-vercel-isr.vercel.app/prerendered) - generated at build time and cached permanently
-- [/dynamic](https://nuxt-vercel-isr.vercel.app/dynamic) - always fresh
+- [/](https://test-nuxt-vercel-isr.vercel.app/) - revalidated every 60 seconds, in the background
+- [/static](https://test-nuxt-vercel-isr.vercel.app/static) - generated on demand and then cached permanently
+- [/prerendered](https://test-nuxt-vercel-isr.vercel.app/prerendered) - generated at build time and cached permanently
+- [/dynamic](https://test-nuxt-vercel-isr.vercel.app/dynamic) - always fresh
 
 The only config required:
 
@@ -15,19 +15,19 @@ The only config required:
 export default defineNuxtConfig({
   routeRules: {
     // all routes (by default) will be revalidated every 60 seconds, in the background
-    '/**': { isr: 60 },
+    "/**": { isr: 60 },
     // this page will be generated on demand and then cached permanently
-    '/static': { isr: true },
+    "/static": { isr: true },
     // this page is generated at build time and cached permanently
-    '/prerendered': { prerender: true },
+    "/prerendered": { prerender: true },
     // this page will be always fresh
-    '/dynamic': { isr: false },
+    "/dynamic": { isr: false },
     // you can do lots more with route rules too!
-    '/redirect': { redirect: '/static' },
-    '/headers': { headers: { 'x-magic-of': 'nuxt and vercel' } },
-    '/spa': { ssr: false },
+    "/redirect": { redirect: "/static" },
+    "/headers": { headers: { "x-magic-of": "nuxt and vercel" } },
+    "/spa": { ssr: false },
   },
-})
+});
 ```
 
 ## Setup
