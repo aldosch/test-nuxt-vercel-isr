@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   nitro: {
+    preset: "vercel",
     vercel: {
       config: {
         bypassToken: process.env.VERCEL_BYPASS_TOKEN,
